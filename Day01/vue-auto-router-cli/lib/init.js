@@ -3,7 +3,7 @@ const {promisify}  = require("util");
 const figlet  = promisify(require("figlet"));
 const chalk  = require("chalk");
 const clear  = require("clear");
-const log = content => console.log(chalk.red(content))
+const log = content => console.log(chalk.green(content))
 
 module.exports = async name =>{
     // 打印欢迎界面
@@ -11,8 +11,8 @@ module.exports = async name =>{
     figlet.text('Welcome Fann', {
         font: 'Ghost',
         color: 'red',
-        //horizontalLayout: 'default',
-        //verticalLayout: 'default',
+        horizontalLayout: 'default',
+        verticalLayout: 'default',
         //width: 80,
         whitespaceBreak: true
     }, function(err, data) {
@@ -22,5 +22,6 @@ module.exports = async name =>{
             return;
         }
         console.log(data);
+        log(data);
     });
 }
