@@ -9,12 +9,12 @@ const chalkAnimation = require("chalk-animation");
 module.exports = async name =>{
     // 打印欢迎界面
     clear()
-    figlet.text('Welcome Fann', {
+    figlet.text('Welcome Fann !', {
         font: 'Ghost',
         color: 'red',
         horizontalLayout: 'default',
         verticalLayout: 'default',
-        //width: 80,
+        // width: 80,
         whitespaceBreak: true
     }, function(err, data) {
         if (err) {
@@ -24,7 +24,9 @@ module.exports = async name =>{
         }
         // console.log(data);
         chalkAnimation.rainbow(data).start();
+
+        chalkAnimation.rainbow(data).stop();
         // log(data);
-        console.log("");
+        // console.log("");
     });
 }
